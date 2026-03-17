@@ -98,7 +98,7 @@ export const Autocomplete = forwardRef<HTMLDivElement, AutocompleteProps>(
               placeholder={placeholder}
               {...(icon && { 'data-icon': true })}
             />
-            <Button className={classes.chevron}>
+            <Button className={classes.chevron} aria-label="Show options">
               <RiArrowDownSLine aria-hidden="true" />
             </Button>
           </div>

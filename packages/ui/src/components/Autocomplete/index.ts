@@ -15,8 +15,10 @@
  */
 
 export { Autocomplete } from './Autocomplete';
+export { AutocompleteDefinition } from './definition';
 export type {
   AutocompleteProps,
+  AutocompleteOwnProps,
   AutocompleteOption,
   AutocompleteDisplayMode,
   AutocompleteGridConfig,

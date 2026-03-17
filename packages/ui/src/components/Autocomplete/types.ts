@@ -24,7 +24,7 @@ export type AutocompleteOption = {
   value: string;
   label: string;
   disabled?: boolean;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 /** @public */

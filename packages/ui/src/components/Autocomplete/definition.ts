@@ -42,7 +42,6 @@ export const AutocompleteDefinition = defineComponent<AutocompleteOwnProps>()({
     size: { dataAttribute: true, default: 'small' },
     options: {},
     placeholder: {},
-    allowsCustomValue: {},
     displayMode: { default: 'listbox' },
     gridConfig: {},
     tableColumns: {},
