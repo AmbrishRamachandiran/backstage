@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Breakpoint } from '../..';
-import { ReactNode } from 'react';
+import type { Breakpoint } from '../../types';
+import type { ReactNode } from 'react';
 import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components';
 import type { FieldLabelProps } from '../FieldLabel/types';
 

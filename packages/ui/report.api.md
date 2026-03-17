@@ -278,6 +278,46 @@ export const Autocomplete: ForwardRefExoticComponent<
   AutocompleteProps & RefAttributes<HTMLDivElement>
 >;
 
+// @public
+export const AutocompleteDefinition: {
+  readonly styles: {
+    readonly [key: string]: string;
+  };
+  readonly classNames: {
+    readonly root: 'bui-Autocomplete';
+    readonly popover: 'bui-AutocompletePopover';
+    readonly trigger: 'bui-AutocompleteTrigger';
+    readonly input: 'bui-AutocompleteInput';
+    readonly inputWrapper: 'bui-AutocompleteInputWrapper';
+    readonly inputIcon: 'bui-AutocompleteInputIcon';
+    readonly chevron: 'bui-AutocompleteChevron';
+    readonly listbox: 'bui-AutocompleteListBox';
+    readonly item: 'bui-AutocompleteItem';
+    readonly itemLabel: 'bui-AutocompleteItemLabel';
+  };
+  readonly bg: 'consumer';
+  readonly propDefs: {
+    readonly icon: {};
+    readonly size: {
+      readonly dataAttribute: true;
+      readonly default: 'small';
+    };
+    readonly options: {};
+    readonly placeholder: {};
+    readonly displayMode: {
+      readonly default: 'listbox';
+    };
+    readonly gridConfig: {};
+    readonly tableColumns: {};
+    readonly renderOption: {};
+    readonly label: {};
+    readonly secondaryLabel: {};
+    readonly description: {};
+    readonly isRequired: {};
+    readonly className: {};
+  };
+};
+
 // @public (undocumented)
 export type AutocompleteDisplayMode =
   | 'listbox'
@@ -297,11 +337,27 @@ export type AutocompleteOption = {
   value: string;
   label: string;
   disabled?: boolean;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
-// Warning: (ae-forgotten-export) The symbol "AutocompleteOwnProps" needs to be exported by the entry point index.d.ts
-//
+// @public (undocumented)
+export type AutocompleteOwnProps = {
+  icon?: ReactNode;
+  size?: 'small' | 'medium' | Partial<Record<Breakpoint, 'small' | 'medium'>>;
+  options?: Array<AutocompleteOption>;
+  placeholder?: string;
+  allowsCustomValue?: boolean;
+  displayMode?: AutocompleteDisplayMode;
+  gridConfig?: AutocompleteGridConfig;
+  tableColumns?: AutocompleteTableColumn[];
+  renderOption?: (item: AutocompleteOption) => ReactNode;
+  label?: FieldLabelProps['label'];
+  secondaryLabel?: FieldLabelProps['secondaryLabel'];
+  description?: FieldLabelProps['description'];
+  isRequired?: boolean;
+  className?: string;
+};
+
 // @public (undocumented)
 export interface AutocompleteProps
   extends AutocompleteOwnProps,
