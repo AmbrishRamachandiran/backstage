@@ -94,7 +94,9 @@ export function AutocompleteMenu(props: AutocompleteContentProps) {
           ) : (
             <>
               {option.icon && (
-                <span style={{ flexShrink: 0 }}>{option.icon}</span>
+                <span style={{ flexShrink: 0 }}>
+                  {option.icon as ReactNode}
+                </span>
               )}
               <span className={classes.itemLabel} style={{ flex: 1 }}>
                 {option.label}
@@ -106,7 +108,7 @@ export function AutocompleteMenu(props: AutocompleteContentProps) {
                     color: 'var(--bui-fg-secondary)',
                   }}
                 >
-                  {option.description}
+                  {option.description as ReactNode}
                 </span>
               )}
             </>
@@ -168,7 +170,7 @@ export function AutocompleteGrid(props: AutocompleteContentProps) {
                     fontSize: '1.5rem',
                   }}
                 >
-                  {option.icon}
+                  {option.icon as ReactNode}
                 </div>
               )}
               <span className={classes.itemLabel}>{option.label}</span>
@@ -180,7 +182,7 @@ export function AutocompleteGrid(props: AutocompleteContentProps) {
                     marginTop: 'var(--bui-space-1)',
                   }}
                 >
-                  {option.description}
+                  {option.description as ReactNode}
                 </span>
               )}
             </>
@@ -231,7 +233,9 @@ export function AutocompleteTags(props: AutocompleteContentProps) {
           ) : (
             <>
               {option.icon && (
-                <span style={{ fontSize: '0.875rem' }}>{option.icon}</span>
+                <span style={{ fontSize: '0.875rem' }}>
+                  {option.icon as ReactNode}
+                </span>
               )}
               <span className={classes.itemLabel}>{option.label}</span>
             </>
@@ -313,7 +317,9 @@ export function AutocompleteTable(props: AutocompleteContentProps) {
                     key={col.key}
                     style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
                   >
-                    {col.render ? col.render(option) : option[col.key]}
+                    {col.render
+                      ? col.render(option)
+                      : (option[col.key] as ReactNode)}
                   </div>
                 ))}
               </div>
