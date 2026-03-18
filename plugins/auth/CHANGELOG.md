@@ -1,5 +1,15 @@
 # @backstage/plugin-auth
 
+## 0.1.6
+
+### Patch Changes
+
+- 06294aa: Migrated the ConsentPage UI from Material-UI and `@backstage/core-components` to `@backstage/ui`.
+- aa29b50: New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
+- Updated dependencies
+  - @backstage/ui@0.13.0
+  - @backstage/frontend-plugin-api@0.15.0
+
 ## 0.1.6-next.1
 
 ### Patch Changes

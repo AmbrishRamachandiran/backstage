@@ -1,5 +1,22 @@
 # @backstage/backend-test-utils
 
+## 1.11.1
+
+### Patch Changes
+
+- dee4283: Added `pluginId` field to `ActionsServiceAction` type, populated from the registering plugin's metadata.
+- 164711a: Added `cancelTask` to `MockSchedulerService` and mock scheduler service factory.
+- 62f0a53: Fixed error forwarding in the actions registry so that known errors like `InputError` and `NotFoundError` thrown by actions preserve their original status codes and messages instead of being wrapped in `ForwardedError` and coerced to 500.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- 1ee5b28: Adds a new metrics service mock to be leveraged in tests
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.8.0
+  - @backstage/backend-defaults@0.16.0
+  - @backstage/plugin-permission-common@0.9.7
+  - @backstage/plugin-auth-node@0.6.14
+  - @backstage/backend-app-api@1.6.0
+  - @backstage/plugin-events-node@0.4.20
+
 ## 1.11.1-next.2
 
 ### Patch Changes

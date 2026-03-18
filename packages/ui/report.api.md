@@ -20,6 +20,8 @@ import type { DisclosurePanelProps } from 'react-aria-components';
 import type { DisclosureProps } from 'react-aria-components';
 import type { ElementType } from 'react';
 import { ForwardRefExoticComponent } from 'react';
+import type { GridListItemProps } from 'react-aria-components';
+import type { GridListProps } from 'react-aria-components';
 import type { HeadingProps } from 'react-aria-components';
 import type { HTMLAttributes } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
@@ -868,7 +870,7 @@ export const Cell: {
   displayName: string;
 };
 
-// @public (undocumented)
+// @public
 export type CellOwnProps = {
   className?: string;
 };
@@ -876,7 +878,7 @@ export type CellOwnProps = {
 // @public (undocumented)
 export const CellProfile: (props: CellProfileProps) => JSX_2.Element;
 
-// @public (undocumented)
+// @public
 export type CellProfileOwnProps = {
   src?: string;
   name?: string;
@@ -886,12 +888,12 @@ export type CellProfileOwnProps = {
   className?: string;
 };
 
-// @public (undocumented)
+// @public
 export interface CellProfileProps
   extends CellProfileOwnProps,
     Omit<CellProps_2, keyof CellProfileOwnProps> {}
 
-// @public (undocumented)
+// @public
 export interface CellProps
   extends CellOwnProps,
     Omit<CellProps_2, keyof CellOwnProps> {}
@@ -902,7 +904,7 @@ export const CellText: {
   displayName: string;
 };
 
-// @public (undocumented)
+// @public
 export type CellTextOwnProps = {
   title: string;
   description?: string;
@@ -912,7 +914,7 @@ export type CellTextOwnProps = {
   className?: string;
 };
 
-// @public (undocumented)
+// @public
 export interface CellTextProps
   extends CellTextOwnProps,
     Omit<CellProps_2, keyof CellTextOwnProps> {}
@@ -932,12 +934,6 @@ export const CheckboxDefinition: {
     readonly indicator: 'bui-CheckboxIndicator';
   };
   readonly propDefs: {
-    readonly selected: {
-      readonly dataAttribute: true;
-    };
-    readonly indeterminate: {
-      readonly dataAttribute: true;
-    };
     readonly children: {};
     readonly className: {};
   };
@@ -945,9 +941,7 @@ export const CheckboxDefinition: {
 
 // @public (undocumented)
 export type CheckboxOwnProps = {
-  selected?: boolean;
-  indeterminate?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 };
 
@@ -959,9 +953,8 @@ export interface CheckboxProps
 // @public (undocumented)
 export const Column: (props: ColumnProps) => JSX_2.Element;
 
-// @public (undocumented)
+// @public
 export interface ColumnConfig<T extends TableItem> {
-  // (undocumented)
   cell: (item: T) => ReactElement;
   // (undocumented)
   defaultWidth?: ColumnSize | null;
@@ -1519,11 +1512,11 @@ export const HeaderDefinition: {
     readonly [key: string]: string;
   };
   readonly classNames: {
-    readonly root: 'bui-HeaderPage';
-    readonly content: 'bui-HeaderPageContent';
-    readonly breadcrumbs: 'bui-HeaderPageBreadcrumbs';
-    readonly tabsWrapper: 'bui-HeaderPageTabsWrapper';
-    readonly controls: 'bui-HeaderPageControls';
+    readonly root: 'bui-Header';
+    readonly content: 'bui-HeaderContent';
+    readonly breadcrumbs: 'bui-HeaderBreadcrumbs';
+    readonly tabsWrapper: 'bui-HeaderTabsWrapper';
+    readonly controls: 'bui-HeaderControls';
   };
   readonly propDefs: {
     readonly title: {};
@@ -1560,11 +1553,11 @@ export const HeaderPageDefinition: {
     readonly [key: string]: string;
   };
   readonly classNames: {
-    readonly root: 'bui-HeaderPage';
-    readonly content: 'bui-HeaderPageContent';
-    readonly breadcrumbs: 'bui-HeaderPageBreadcrumbs';
-    readonly tabsWrapper: 'bui-HeaderPageTabsWrapper';
-    readonly controls: 'bui-HeaderPageControls';
+    readonly root: 'bui-Header';
+    readonly content: 'bui-HeaderContent';
+    readonly breadcrumbs: 'bui-HeaderBreadcrumbs';
+    readonly tabsWrapper: 'bui-HeaderTabsWrapper';
+    readonly controls: 'bui-HeaderControls';
   };
   readonly propDefs: {
     readonly title: {};
@@ -1664,6 +1657,80 @@ export type LinkOwnProps = {
 export interface LinkProps
   extends Omit<LinkProps_2, 'children' | 'className'>,
     LinkOwnProps {}
+
+// @public
+export const List: <T extends object>(props: ListProps<T>) => JSX_2.Element;
+
+// @public
+export const ListDefinition: {
+  readonly styles: {
+    readonly [key: string]: string;
+  };
+  readonly classNames: {
+    readonly root: 'bui-List';
+  };
+  readonly propDefs: {
+    readonly items: {};
+    readonly children: {};
+    readonly renderEmptyState: {};
+    readonly className: {};
+  };
+};
+
+// @public
+export type ListOwnProps<T = object> = {
+  items?: GridListProps<T>['items'];
+  children?: GridListProps<T>['children'];
+  renderEmptyState?: GridListProps<T>['renderEmptyState'];
+  className?: string;
+};
+
+// @public
+export interface ListProps<T>
+  extends ListOwnProps<T>,
+    Omit<GridListProps<T>, keyof ListOwnProps<T>> {}
+
+// @public
+export const ListRow: (props: ListRowProps) => JSX_2.Element;
+
+// @public
+export const ListRowDefinition: {
+  readonly styles: {
+    readonly [key: string]: string;
+  };
+  readonly bg: 'consumer';
+  readonly classNames: {
+    readonly root: 'bui-ListRow';
+    readonly check: 'bui-ListRowCheck';
+    readonly icon: 'bui-ListRowIcon';
+    readonly label: 'bui-ListRowLabel';
+    readonly description: 'bui-ListRowDescription';
+    readonly actions: 'bui-ListRowActions';
+  };
+  readonly propDefs: {
+    readonly children: {};
+    readonly description: {};
+    readonly icon: {};
+    readonly menuItems: {};
+    readonly customActions: {};
+    readonly className: {};
+  };
+};
+
+// @public
+export type ListRowOwnProps = {
+  children?: React.ReactNode;
+  description?: string;
+  icon?: React.ReactElement;
+  menuItems?: React.ReactNode;
+  customActions?: React.ReactNode;
+  className?: string;
+};
+
+// @public
+export interface ListRowProps
+  extends ListRowOwnProps,
+    Omit<GridListItemProps, keyof ListRowOwnProps> {}
 
 // @public (undocumented)
 export interface MarginProps {
@@ -2178,11 +2245,90 @@ export interface RowProps<T>
   extends RowOwnProps<T>,
     Omit<RowProps_2<T>, keyof RowOwnProps> {}
 
-// @public (undocumented)
+// @public
 export type RowRenderFn<T extends TableItem> = (params: {
   item: T;
   index: number;
 }) => ReactNode;
+
+// @public (undocumented)
+export function SearchAutocomplete(
+  props: SearchAutocompleteProps,
+): JSX_2.Element;
+
+// @public
+export const SearchAutocompleteDefinition: {
+  readonly styles: {
+    readonly [key: string]: string;
+  };
+  readonly classNames: {
+    readonly root: 'bui-SearchAutocomplete';
+    readonly searchField: 'bui-SearchAutocompleteSearchField';
+    readonly searchFieldInput: 'bui-SearchAutocompleteInput';
+    readonly searchFieldClear: 'bui-SearchAutocompleteClear';
+    readonly popover: 'bui-SearchAutocompletePopover';
+    readonly inner: 'bui-SearchAutocompleteInner';
+    readonly listBox: 'bui-SearchAutocompleteListBox';
+    readonly loadingState: 'bui-SearchAutocompleteLoadingState';
+    readonly emptyState: 'bui-SearchAutocompleteEmptyState';
+  };
+  readonly propDefs: {
+    readonly 'aria-label': {};
+    readonly 'aria-labelledby': {};
+    readonly size: {
+      readonly dataAttribute: true;
+      readonly default: 'small';
+    };
+    readonly placeholder: {
+      readonly default: 'Search';
+    };
+    readonly inputValue: {};
+    readonly onInputChange: {};
+    readonly popoverWidth: {};
+    readonly popoverPlacement: {};
+    readonly children: {};
+    readonly isLoading: {};
+    readonly defaultOpen: {};
+    readonly className: {};
+    readonly style: {};
+  };
+};
+
+// @public (undocumented)
+export function SearchAutocompleteItem(
+  props: SearchAutocompleteItemProps,
+): JSX_2.Element;
+
+// @public (undocumented)
+export type SearchAutocompleteItemOwnProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+// @public (undocumented)
+export interface SearchAutocompleteItemProps
+  extends SearchAutocompleteItemOwnProps,
+    Omit<ListBoxItemProps, keyof SearchAutocompleteItemOwnProps> {}
+
+// @public (undocumented)
+export type SearchAutocompleteOwnProps = {
+  inputValue?: string;
+  onInputChange?: (value: string) => void;
+  size?: 'small' | 'medium' | Partial<Record<Breakpoint, 'small' | 'medium'>>;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+  placeholder?: string;
+  popoverWidth?: string;
+  popoverPlacement?: PopoverProps_2['placement'];
+  children?: ReactNode;
+  isLoading?: boolean;
+  defaultOpen?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+};
+
+// @public (undocumented)
+export interface SearchAutocompleteProps extends SearchAutocompleteOwnProps {}
 
 // @public (undocumented)
 export const SearchField: ForwardRefExoticComponent<
@@ -2442,6 +2588,9 @@ export const TableDefinition: {
     readonly stale: {
       readonly dataAttribute: true;
     };
+    readonly loading: {
+      readonly dataAttribute: true;
+    };
   };
 };
 
@@ -2551,6 +2700,8 @@ export interface TableProps<T extends TableItem> {
   sort?: SortState;
   // (undocumented)
   style?: React.CSSProperties;
+  // (undocumented)
+  virtualized?: VirtualizedProp;
 }
 
 // @public (undocumented)
@@ -2559,6 +2710,7 @@ export const TableRoot: (props: TableRootProps) => JSX_2.Element;
 // @public (undocumented)
 export type TableRootOwnProps = {
   stale?: boolean;
+  loading?: boolean;
 };
 
 // @public (undocumented)
@@ -3072,6 +3224,16 @@ export interface UtilityProps extends SpaceProps {
   // (undocumented)
   rowSpan?: Responsive<Columns | 'full'>;
 }
+
+// @public (undocumented)
+export type VirtualizedProp =
+  | boolean
+  | {
+      rowHeight: number;
+    }
+  | {
+      estimatedRowHeight: number;
+    };
 
 // @public
 export const VisuallyHidden: (props: VisuallyHiddenProps) => JSX_2.Element;

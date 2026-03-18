@@ -479,7 +479,9 @@ export const formDecoratorsApi: OverridableExtensionDefinition<{
 }>;
 
 // @alpha (undocumented)
-export const formDecoratorsApiRef: ApiRef<ScaffolderFormDecoratorsApi>;
+export const formDecoratorsApiRef: ApiRef<ScaffolderFormDecoratorsApi> & {
+  readonly $$type: '@backstage/ApiRef';
+};
 
 export { formFieldsApiRef };
 
@@ -521,7 +523,7 @@ export type ScaffolderTemplateFormPreviewerClassKey =
   | 'textArea'
   | 'preview';
 
-// @alpha (undocumented)
+// @alpha @deprecated (undocumented)
 export const scaffolderTranslationRef: TranslationRef<
   'scaffolder',
   {

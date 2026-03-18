@@ -237,7 +237,7 @@ const config: Config = {
           },
           {
             from: '/docs/features/software-templates/testing-scaffolder-alpha',
-            to: '/docs/features/software-templates/migrating-to-rjsf-v5',
+            to: '/docs/features/software-templates/',
           },
           {
             from: '/docs/auth/glossary',
@@ -432,12 +432,14 @@ const config: Config = {
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
+          title: 'GitHub repository',
         },
         {
           href: 'https://discord.gg/backstage-687207715902193673',
           position: 'right',
           className: 'header-discord-link',
           'aria-label': 'Discord community',
+          title: 'Discord community',
         },
         ...(useVersionedDocs
           ? [
@@ -450,6 +452,13 @@ const config: Config = {
       ],
     },
     image: 'img/sharing-opengraph.png',
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'Backstage is an open source developer portal framework that centralizes your software catalog, unifies infrastructure tools, and helps teams ship high-quality code faster.',
+      },
+    ],
     footer: {
       links: [
         {

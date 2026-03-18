@@ -1,5 +1,18 @@
 # @backstage/plugin-notifications
 
+## 0.5.15
+
+### Patch Changes
+
+- aa29b50: New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- Updated dependencies
+  - @backstage/ui@0.13.0
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+  - @backstage/plugin-signals-react@0.0.20
+
 ## 0.5.15-next.1
 
 ### Patch Changes

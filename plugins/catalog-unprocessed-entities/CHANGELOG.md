@@ -1,5 +1,20 @@
 # @backstage/plugin-catalog-unprocessed-entities
 
+## 0.2.27
+
+### Patch Changes
+
+- 538c985: Updated installation documentation to use feature discovery as the default.
+- aa29b50: New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
+- 3f36ce1: Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
+- f4a1edd: Removed the deprecated `DevToolsContentBlueprint` from `@backstage/plugin-devtools-react`. DevTools pages in the new frontend system now use `SubPageBlueprint` tabs instead, and the catalog unprocessed entities alpha extension now attaches to DevTools as a subpage.
+- Updated dependencies
+  - @backstage/ui@0.13.0
+  - @backstage/core-compat-api@0.5.9
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+
 ## 0.2.27-next.1
 
 ### Patch Changes

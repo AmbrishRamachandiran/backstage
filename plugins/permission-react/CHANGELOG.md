@@ -1,5 +1,14 @@
 # @backstage/plugin-permission-react
 
+## 0.4.41
+
+### Patch Changes
+
+- 5fec07d: Permission checks made in the same tick are now batched into a single call to the permission backend.
+- Updated dependencies
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/plugin-permission-common@0.9.7
+
 ## 0.4.41-next.0
 
 ### Patch Changes

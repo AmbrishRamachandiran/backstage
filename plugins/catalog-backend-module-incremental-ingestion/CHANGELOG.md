@@ -1,5 +1,19 @@
 # @backstage/plugin-catalog-backend-module-incremental-ingestion
 
+## 0.7.10
+
+### Patch Changes
+
+- 5f1e7b8: Migrated metrics from direct `@opentelemetry/api` usage to the alpha `MetricsService`, providing plugin-scoped metric attribution. The `@opentelemetry/api` dependency has been removed.
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.8.0
+  - @backstage/backend-defaults@0.16.0
+  - @backstage/plugin-catalog-backend@3.5.0
+  - @backstage/plugin-catalog-node@2.1.0
+  - @backstage/plugin-permission-common@0.9.7
+  - @backstage/catalog-model@1.7.7
+  - @backstage/plugin-events-node@0.4.20
+
 ## 0.7.10-next.2
 
 ### Patch Changes

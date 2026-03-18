@@ -7,7 +7,6 @@ import { AnyApiFactory } from '@backstage/frontend-plugin-api';
 import { AnyRouteRefParams } from '@backstage/frontend-plugin-api';
 import { ApiFactory } from '@backstage/frontend-plugin-api';
 import { ConfigurableExtensionDataRef } from '@backstage/frontend-plugin-api';
-import { DevToolsContentBlueprintParams } from '@backstage/plugin-devtools-react';
 import { ExtensionBlueprintParams } from '@backstage/frontend-plugin-api';
 import { ExtensionDataRef } from '@backstage/frontend-plugin-api';
 import { ExtensionInput } from '@backstage/frontend-plugin-api';
@@ -144,8 +143,8 @@ export default _default;
 
 // @alpha
 export const unprocessedEntitiesDevToolsContent: OverridableExtensionDefinition<{
-  kind: 'devtools-content';
-  name: undefined;
+  kind: 'sub-page';
+  name: 'unprocessed-entities';
   config: {
     path: string | undefined;
     title: string | undefined;
@@ -164,9 +163,22 @@ export const unprocessedEntitiesDevToolsContent: OverridableExtensionDefinition<
         }
       >
     | ExtensionDataRef<JSX_2.Element, 'core.reactElement', {}>
-    | ExtensionDataRef<string, 'core.title', {}>;
+    | ExtensionDataRef<string, 'core.title', {}>
+    | ExtensionDataRef<
+        IconElement,
+        'core.icon',
+        {
+          optional: true;
+        }
+      >;
   inputs: {};
-  params: DevToolsContentBlueprintParams;
+  params: {
+    path: string;
+    title: string;
+    icon?: IconElement;
+    loader: () => Promise<JSX.Element>;
+    routeRef?: RouteRef_2;
+  };
 }>;
 
 // (No @packageDocumentation comment for this package)

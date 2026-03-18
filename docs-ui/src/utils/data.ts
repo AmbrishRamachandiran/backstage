@@ -75,6 +75,10 @@ export const components: Page[] = [
     slug: 'link',
   },
   {
+    title: 'List',
+    slug: 'list',
+  },
+  {
     title: 'Menu',
     slug: 'menu',
   },
@@ -89,6 +93,10 @@ export const components: Page[] = [
   {
     title: 'RadioGroup',
     slug: 'radio-group',
+  },
+  {
+    title: 'SearchAutocomplete',
+    slug: 'search-autocomplete',
   },
   {
     title: 'SearchField',

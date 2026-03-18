@@ -1,5 +1,29 @@
 # @backstage/plugin-scaffolder-react
 
+## 1.20.0
+
+### Minor Changes
+
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- 470f72d: The `LogViewer` component from `@backstage/core-components` now supports downloading logs if a callback is passed to `onDownloadLogs`
+
+### Patch Changes
+
+- 004b5c1: Added back `formFieldsApiRef` and `ScaffolderFormFieldsApi` as alpha exports.
+- bd31ddd: Updated dependency `flatted` to `3.3.4`.
+- f598909: Added `scaffolderApiMock` test utility, exported from `@backstage/plugin-scaffolder-react/testUtils`.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- Updated dependencies
+  - @backstage/plugin-catalog-react@2.1.0
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+  - @backstage/catalog-client@1.14.0
+  - @backstage/frontend-test-utils@0.5.1
+  - @backstage/plugin-permission-react@0.4.41
+  - @backstage/plugin-scaffolder-common@2.0.0
+  - @backstage/catalog-model@1.7.7
+
 ## 1.20.0-next.2
 
 ### Minor Changes

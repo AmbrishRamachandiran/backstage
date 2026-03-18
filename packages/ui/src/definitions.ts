@@ -49,10 +49,18 @@ export {
   HeaderPageDefinition,
 } from './components/Header/definition';
 export { LinkDefinition } from './components/Link/definition';
+export {
+  ListDefinition,
+  ListRowDefinition,
+} from './components/List/definition';
 export { MenuDefinition } from './components/Menu/definition';
 export { PasswordFieldDefinition } from './components/PasswordField/definition';
 export { PopoverDefinition } from './components/Popover/definition';
 export { RadioGroupDefinition } from './components/RadioGroup/definition';
+export {
+  SearchAutocompleteDefinition,
+  SearchAutocompleteItemDefinition,
+} from './components/SearchAutocomplete/definition';
 export { SearchFieldDefinition } from './components/SearchField/definition';
 export { SelectDefinition } from './components/Select/definition';
 export { SkeletonDefinition } from './components/Skeleton/definition';

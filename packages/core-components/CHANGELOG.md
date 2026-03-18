@@ -1,5 +1,19 @@
 # @backstage/core-components
 
+## 0.18.8
+
+### Patch Changes
+
+- e26e3de: The login request dialog now handles auth provider icons passed as `IconElement` in addition to `IconComponent`.
+- 8e09233: Fixed the shared `Progress` component to provide an accessible name for its loading indicator by default.
+- 8b1a847: Fixed Table component layout when both `filters` and `title` props are used together. The filter controls now use a dedicated CSS class (`filterControls`) instead of incorrectly reusing the root container class.
+- 3f36ce1: Clarified the `IconElement` sizing contract for the new frontend system and aligned legacy system icon rendering with the new icon API.
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- 470f72d: The `LogViewer` component from `@backstage/core-components` now supports downloading logs if a callback is passed to `onDownloadLogs`
+- Updated dependencies
+  - @backstage/core-plugin-api@1.12.4
+
 ## 0.18.8-next.1
 
 ### Patch Changes

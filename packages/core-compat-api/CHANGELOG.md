@@ -1,5 +1,19 @@
 # @backstage/core-compat-api
 
+## 0.5.9
+
+### Patch Changes
+
+- b15a685: Added `withApis`, which is a Higher-Order Component for providing APIs as props to a component via `useApiHolder`.
+- 8e09233: Added a missing dependency on `@backstage/filter-predicates` to `@backstage/core-compat-api`. This fixes package metadata for consumers that use compatibility helpers relying on filter predicate support.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- Updated dependencies
+  - @backstage/plugin-catalog-react@2.1.0
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/frontend-plugin-api@0.15.0
+  - @backstage/plugin-app-react@0.2.1
+  - @backstage/filter-predicates@0.1.1
+
 ## 0.5.9-next.2
 
 ### Patch Changes

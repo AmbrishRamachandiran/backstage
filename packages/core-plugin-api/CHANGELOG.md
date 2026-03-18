@@ -1,5 +1,17 @@
 # @backstage/core-plugin-api
 
+## 1.12.4
+
+### Patch Changes
+
+- d911b72: Updated `createApiRef` to preserve the direct config call without deprecation warnings while staying compatible with the new frontend API ref typing.
+- 59752a2: Deprecated `AlertApi`, `AlertMessage`, and `alertApiRef` in favor of the new `ToastApi` from `@backstage/frontend-plugin-api`.
+- 0452d02: Add optional `description` field to plugin-level feature flags.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- fe848e0: Changed `useApiHolder` to return an empty `ApiHolder` instead of throwing when used outside of an API context.
+- Updated dependencies
+  - @backstage/frontend-plugin-api@0.15.0
+
 ## 1.12.4-next.1
 
 ### Patch Changes

@@ -12,19 +12,20 @@ import { SidebarLogo } from './SidebarLogo';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { SidebarSearchModal } from '@backstage/plugin-search';
-import { UserSettingsSignInAvatar, Settings as SidebarSettings } from '@backstage/plugin-user-settings';
+import {
+  UserSettingsSignInAvatar,
+  Settings as SidebarSettings,
+} from '@backstage/plugin-user-settings';
 import { NotificationsSidebarItem } from '@backstage/plugin-notifications';
 
 export const SidebarContent = NavContentBlueprint.make({
   params: {
     component: ({ navItems }) => {
       const nav = navItems.withComponent(item => (
-        <SidebarItem
-          icon={() => item.icon}
-          to={item.href}
-          text={item.title}
-        />
+        <SidebarItem icon={() => item.icon} to={item.href} text={item.title} />
       ));
+      // Skipped items
+      nav.take('page:search');
       return compatWrapper(
         <Sidebar>
           <SidebarLogo />

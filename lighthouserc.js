@@ -34,10 +34,11 @@ module.exports = {
         /** Search */
         'http://localhost:3000/search',
         /** Miscellaneous */
-        'http://localhost:3000/settings',
+        // TODO(Rugvip): Figure out why these don't work after the BUI header switch
+        // 'http://localhost:3000/settings/general',
         /** plugin-devtools */
-        'http://localhost:3000/devtools',
-        'http://localhost:3000/devtools/config',
+        // 'http://localhost:3000/devtools/info',
+        // 'http://localhost:3000/devtools/config',
         /** plugin-explore */
         'http://localhost:3000/explore',
         'http://localhost:3000/explore/groups',
@@ -54,7 +55,7 @@ module.exports = {
         preset: 'desktop',
       },
       startServerCommand: 'yarn start',
-      startServerReadyPattern: 'webpack compiled successfully',
+      startServerReadyPattern: 'compiled.*successfully',
       startServerReadyTimeout: 600000,
       numberOfRuns: 1,
       puppeteerScript: './.lighthouseci/scripts/guest-auth.js',

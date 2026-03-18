@@ -43,6 +43,7 @@ breakpoint
 Brex
 broadcasted
 bugfixes
+BUIProvider
 builtins
 bundler
 bundlers
@@ -555,6 +556,7 @@ validators
 Valkey
 varchar
 viewport
+virtualized
 vite
 VMware
 Vodafone

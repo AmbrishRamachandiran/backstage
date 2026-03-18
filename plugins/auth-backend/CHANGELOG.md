@@ -1,5 +1,26 @@
 # @backstage/plugin-auth-backend
 
+## 0.27.2
+
+### Patch Changes
+
+- 1ccad86: Added `who-am-i` action to the auth backend actions registry. Returns the catalog entity and user info for the currently authenticated user.
+- d0f4cd2: Added optional client metadata document endpoint at `/.well-known/oauth-client/cli.json` relative to the auth backend base URL for CLI authentication. Enabled when `auth.experimentalClientIdMetadataDocuments.enabled` is set to `true`.
+- 6738cf0: build(deps): bump `minimatch` from 9.0.5 to 10.2.1
+- e9b6e97: Fixed a security vulnerability where the CIMD metadata fetch could follow HTTP redirects to internal hosts, bypassing SSRF protections.
+- 0f9d673: Improved redirect URI validation in the experimental OIDC provider to match against normalized URLs rather than raw strings.
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- 634eded: Fixed a foreign key constraint violation when issuing refresh tokens for CIMD clients, and
+  prevented a failed refresh token issuance from failing the entire token exchange.
+  Fixed AWS ALB auth provider incorrectly returning HTTP 500 instead of 401 for JWT validation failures,
+  which caused retry loops and memory pressure under load.
+- 619be54: Update migrations to be reversible
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.8.0
+  - @backstage/plugin-catalog-node@2.1.0
+  - @backstage/catalog-model@1.7.7
+  - @backstage/plugin-auth-node@0.6.14
+
 ## 0.27.1-next.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @backstage/plugin-auth-backend-module-oauth2-proxy-provider
 
+## 0.2.18
+
+### Patch Changes
+
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.8.0
+  - @backstage/plugin-auth-node@0.6.14
+
 ## 0.2.18-next.1
 
 ### Patch Changes

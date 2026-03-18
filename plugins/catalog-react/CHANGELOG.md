@@ -1,5 +1,32 @@
 # @backstage/plugin-catalog-react
 
+## 2.1.0
+
+### Minor Changes
+
+- c548a0f: Added `EntityDataTable`, `EntityRelationCard`, `entityDataTableColumns`, `entityColumnPresets`, and related types as alpha exports. These replace `EntityTable` and `RelatedEntitiesCard` (from `@backstage/plugin-catalog`) respectively, providing a unified BUI-based pattern for entity table cards.
+- 4d58894: Added `aliases` and `contentOrder` fields to `EntityContentGroupDefinition`, allowing groups to declare alias IDs and control the sort order of their content items.
+- d14b6e0: Exported `useEntityRefLink` hook that returns a function for generating entity page URLs from entity references.
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- c6080eb: Added `EntityInfoCard` component to `@backstage/plugin-catalog-react` as a BUI-based card wrapper for entity page cards.
+
+### Patch Changes
+
+- a49a40d: Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- Updated dependencies
+  - @backstage/ui@0.13.0
+  - @backstage/core-compat-api@0.5.9
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+  - @backstage/catalog-client@1.14.0
+  - @backstage/frontend-test-utils@0.5.1
+  - @backstage/plugin-permission-react@0.4.41
+  - @backstage/filter-predicates@0.1.1
+  - @backstage/plugin-permission-common@0.9.7
+  - @backstage/catalog-model@1.7.7
+  - @backstage/integration-react@1.2.16
+
 ## 2.1.0-next.2
 
 ### Minor Changes

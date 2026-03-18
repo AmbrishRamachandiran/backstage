@@ -1,5 +1,13 @@
 # @backstage/plugin-search-backend-node
 
+## 1.4.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.8.0
+  - @backstage/plugin-permission-common@0.9.7
+
 ## 1.4.2-next.1
 
 ### Patch Changes

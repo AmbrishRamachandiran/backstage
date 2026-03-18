@@ -1,5 +1,16 @@
 # @backstage/plugin-home-react
 
+## 0.1.36
+
+### Patch Changes
+
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- Updated dependencies
+  - @backstage/core-compat-api@0.5.9
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+
 ## 0.1.36-next.1
 
 ### Patch Changes

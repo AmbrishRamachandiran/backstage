@@ -1,5 +1,19 @@
 # @backstage/plugin-search-react
 
+## 1.11.0
+
+### Minor Changes
+
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+
+### Patch Changes
+
+- d5eb954: Fixes the search component not registering the first search on navigate to the search page.
+- Updated dependencies
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+
 ## 1.10.5-next.1
 
 ### Patch Changes

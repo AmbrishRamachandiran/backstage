@@ -1,5 +1,22 @@
 # @backstage/plugin-catalog-import
 
+## 0.13.11
+
+### Patch Changes
+
+- 538c985: Updated installation documentation to use feature discovery as the default.
+- 0be2541: Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- Updated dependencies
+  - @backstage/plugin-catalog-react@2.1.0
+  - @backstage/core-plugin-api@1.12.4
+  - @backstage/core-components@0.18.8
+  - @backstage/frontend-plugin-api@0.15.0
+  - @backstage/catalog-client@1.14.0
+  - @backstage/integration@2.0.0
+  - @backstage/plugin-permission-react@0.4.41
+  - @backstage/catalog-model@1.7.7
+  - @backstage/integration-react@1.2.16
+
 ## 0.13.11-next.2
 
 ### Patch Changes
