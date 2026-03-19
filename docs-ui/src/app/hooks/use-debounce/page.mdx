@@ -1,0 +1,43 @@
+import { ChangelogComponent } from '@/components/ChangelogComponent';
+import { PageTitle } from '@/components/PageTitle';
+import { PropsTable } from '@/components/PropsTable';
+import { Snippet } from '@/components/Snippet';
+import { useDebounceParamDefs, useDebounceReturnDefs } from './props-definition';
+import { useDebounceExampleSnippet } from './snippets';
+import { UseDebounceExample } from './components';
+
+<PageTitle
+  title="useDebounce"
+  description="A custom hook to debounce values and delay updates until after a specified delay."
+/>
+
+## Usage
+
+The `useDebounce` hook delays updating a value until after a specified delay has elapsed since the last change. This is particularly useful for optimizing expensive operations like API calls, search queries, or validation that shouldn't trigger on every keystroke.
+
+This is a custom implementation demonstrating how to create a debounce hook. In production Backstage code, consider using `react-use/esm/useDebounce` instead.
+
+<Snippet
+  align="center"
+  py={4}
+  height={200}
+  preview={<UseDebounceExample />}
+  code={useDebounceExampleSnippet}
+/>
+
+## Common Use Cases
+
+- **Search Input**: Debounce search queries to reduce API calls while typing
+- **Form Validation**: Delay validation until user stops typing
+- **Window Resize**: Debounce resize handlers to improve performance
+- **Auto-save**: Delay save operations until user has stopped making changes
+
+## Parameters
+
+<PropsTable data={useDebounceParamDefs} isHook />
+
+## Return Value
+
+<PropsTable data={useDebounceReturnDefs} isHook />
+
+<ChangelogComponent hook="use-debounce" />

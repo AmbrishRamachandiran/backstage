@@ -152,4 +152,8 @@ export const hooks: Page[] = [
     title: 'useBreakpoint',
     slug: 'use-breakpoint',
   },
+  {
+    title: 'useDebounce',
+    slug: 'use-debounce',
+  },
 ];
