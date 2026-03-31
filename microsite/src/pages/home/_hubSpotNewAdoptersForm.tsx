@@ -35,12 +35,17 @@ export const HubSpotNewAdoptersForm = () => {
   const isFormInitializedRef = useRef(false);
 
   useEffect(() => {
-    const eventListeners: Array<{ element: HTMLInputElement; handler: EventListener }> = [];
-    
+    const eventListeners: Array<{
+      element: HTMLInputElement;
+      handler: EventListener;
+    }> = [];
+
     const initializeForm = () => {
-      const formContainer = document.querySelector(`.${hubSpotStyles.hubSpotNewAdopterFormContent}`);
+      const formContainer = document.querySelector(
+        `.${hubSpotStyles.hubSpotNewAdopterFormContent}`,
+      );
       const hasExistingForm = formContainer?.querySelector('form');
-      
+
       if (window.hbspt && !isFormInitializedRef.current && !hasExistingForm) {
         isFormInitializedRef.current = true;
 
@@ -60,19 +65,21 @@ export const HubSpotNewAdoptersForm = () => {
           }
           return '';
         };
-        
+
         const clearValidationError = (input: HTMLInputElement) => {
           const errorId = `${input.name}-validation-error`;
-          const existingError = input.parentElement?.querySelector('.hs-error-msgs.custom-validation');
+          const existingError = input.parentElement?.querySelector(
+            '.hs-error-msgs.custom-validation',
+          );
           if (existingError) {
             existingError.remove();
           }
-          
+
           if (input.classList.contains('custom-invalid')) {
             input.classList.remove('custom-invalid');
             input.removeAttribute('aria-invalid');
           }
-          
+
           const describedBy = input.getAttribute('aria-describedby');
           if (describedBy) {
             const tokens = describedBy
@@ -85,14 +92,15 @@ export const HubSpotNewAdoptersForm = () => {
             }
           }
         };
-        
+
         const showValidationError = (
           input: HTMLInputElement,
           errorMessage: string,
         ) => {
           const errorId = `${input.name}-validation-error`;
           const errorElement = document.createElement('ul');
-          errorElement.className = 'hs-error-msgs inputs-list custom-validation';
+          errorElement.className =
+            'hs-error-msgs inputs-list custom-validation';
           errorElement.setAttribute('role', 'alert');
           const errorItem = document.createElement('li');
           const errorSpan = document.createElement('span');
@@ -102,10 +110,10 @@ export const HubSpotNewAdoptersForm = () => {
           errorItem.appendChild(errorSpan);
           errorElement.appendChild(errorItem);
           input.parentElement?.appendChild(errorElement);
-          
+
           input.classList.add('custom-invalid');
           input.setAttribute('aria-invalid', 'true');
-          
+
           const describedBy = input.getAttribute('aria-describedby');
           const tokens = describedBy
             ? describedBy.split(/\s+/).filter(token => token)
@@ -115,27 +123,31 @@ export const HubSpotNewAdoptersForm = () => {
           }
           input.setAttribute('aria-describedby', tokens.join(' '));
         };
-        
+
         const validateName = (
           input: HTMLInputElement | null,
           fieldName: string,
           requireMinLength: boolean = true,
         ): boolean => {
           if (!input) return true;
-          
+
           const value = input.value.trim();
-          
+
           if (!value) {
             clearValidationError(input);
             return true;
           }
-          
-          const errorMessage = getValidationError(value, fieldName, requireMinLength);
+
+          const errorMessage = getValidationError(
+            value,
+            fieldName,
+            requireMinLength,
+          );
           const existingError = input.parentElement?.querySelector(
-            '.hs-error-msgs.custom-validation .hs-error-msg'
+            '.hs-error-msgs.custom-validation .hs-error-msg',
           );
           const currentErrorText = existingError?.textContent;
-          
+
           if (errorMessage) {
             if (currentErrorText !== errorMessage) {
               clearValidationError(input);
@@ -143,50 +155,64 @@ export const HubSpotNewAdoptersForm = () => {
             }
             return false;
           }
-          
+
           clearValidationError(input);
           return true;
         };
-        
+
         window.hbspt.forms.create({
           portalId: '21894833',
           formId: '9a5aa2af-87f3-4a44-819f-88ee243bb61e',
           target: `.${hubSpotStyles.hubSpotNewAdopterFormContent}`,
           pageId: '79735607665',
-          onFormReady: function($form: HTMLFormElement) {
-            const firstNameInput = $form.querySelector('input[name="firstname"]') as HTMLInputElement | null;
-            const lastNameInput = $form.querySelector('input[name="lastname"]') as HTMLInputElement | null;
-            
+          onFormReady: function ($form: HTMLFormElement) {
+            const firstNameInput = $form.querySelector(
+              'input[name="firstname"]',
+            ) as HTMLInputElement | null;
+            const lastNameInput = $form.querySelector(
+              'input[name="lastname"]',
+            ) as HTMLInputElement | null;
+
             if (firstNameInput) {
               const firstNameHandler = () => {
                 validateName(firstNameInput, 'First name', true);
               };
               firstNameInput.addEventListener('blur', firstNameHandler);
-              eventListeners.push({ element: firstNameInput, handler: firstNameHandler });
+              eventListeners.push({
+                element: firstNameInput,
+                handler: firstNameHandler,
+              });
             }
-            
+
             if (lastNameInput) {
               const lastNameHandler = () => {
                 validateName(lastNameInput, 'Last name', false);
               };
               lastNameInput.addEventListener('blur', lastNameHandler);
-              eventListeners.push({ element: lastNameInput, handler: lastNameHandler });
+              eventListeners.push({
+                element: lastNameInput,
+                handler: lastNameHandler,
+              });
             }
           },
-          onFormSubmit: function($form: HTMLFormElement) {
-            const firstNameInput = $form.querySelector('input[name="firstname"]') as HTMLInputElement | null;
-            const lastNameInput = $form.querySelector('input[name="lastname"]') as HTMLInputElement | null;
-            
+          onFormSubmit: function ($form: HTMLFormElement) {
+            const firstNameInput = $form.querySelector(
+              'input[name="firstname"]',
+            ) as HTMLInputElement | null;
+            const lastNameInput = $form.querySelector(
+              'input[name="lastname"]',
+            ) as HTMLInputElement | null;
+
             let hasErrors = false;
             let firstInvalidInput: HTMLInputElement | null = null;
-            
+
             [firstNameInput, lastNameInput].forEach(input => {
               if (!input) return;
-              
+
               const isFirstName = input.name === 'firstname';
               const fieldName = isFirstName ? 'First name' : 'Last name';
               const requireMinLength = isFirstName;
-              
+
               const isValid = validateName(input, fieldName, requireMinLength);
               if (!isValid) {
                 hasErrors = true;
@@ -195,39 +221,41 @@ export const HubSpotNewAdoptersForm = () => {
                 }
               }
             });
-            
+
             if (firstInvalidInput) {
               firstInvalidInput.focus();
             }
-            
+
             return !hasErrors;
           },
         });
       }
     };
-    
+
     let script: HTMLScriptElement | null = null;
     let handleLoad: (() => void) | null = null;
-    
+
     if (window.hbspt) {
       initializeForm();
     } else {
-      script = document.getElementById(HUBSPOT_SCRIPT_ID) as HTMLScriptElement | null;
-      
+      script = document.getElementById(
+        HUBSPOT_SCRIPT_ID,
+      ) as HTMLScriptElement | null;
+
       if (!script) {
         script = document.createElement('script');
         script.id = HUBSPOT_SCRIPT_ID;
         script.src = 'https://js.hsforms.net/forms/v2.js';
         document.body.appendChild(script);
       }
-      
+
       handleLoad = () => {
         initializeForm();
       };
-      
+
       script.addEventListener('load', handleLoad);
     }
-    
+
     return () => {
       if (script && handleLoad) {
         script.removeEventListener('load', handleLoad);
