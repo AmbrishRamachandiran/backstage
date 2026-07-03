@@ -107,14 +107,14 @@ To support alarms, extend your `TodoItem` type and database schema with two new 
 export interface TodoItem {
   id: string;
   title: string;
-  createdBy?: string;
+  createdBy: string;
   createdAt?: string;
   dueDate?: string; // ISO 8601 date string
   alarmSent?: boolean; // true after the alarm notification has been sent
 }
 ```
 
-Add a migration that adds these columns to your `todos` table, then update `listOverdueTodos` in `TodoListService` to return todos where `dueDate` is in the past and `alarmSent` is false:
+Add a migration that adds these columns to your `todos` table (make `alarm_sent` `NOT NULL` with a default of `false`), then update `listOverdueTodos` in `TodoListService` to return todos where `dueDate` is in the past and `alarmSent` is false:
 
 ```ts
 async listOverdueTodos(): Promise<TodoItem[]> {

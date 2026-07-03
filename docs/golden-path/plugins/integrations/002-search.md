@@ -46,16 +46,12 @@ export interface TodoDocument extends IndexableDocument {
 
 ### Implement the collator factory
 
-Create the collator factory in your backend package:
+Create the collator factory in a new file inside your backend package:
 
 ```ts
 // plugins/todo-backend/src/search/TodoCollatorFactory.ts
 import { Readable } from 'stream';
-import { Logger } from 'winston';
-import {
-  DocumentCollatorFactory,
-  IndexableDocument,
-} from '@backstage/plugin-search-backend-node';
+import { DocumentCollatorFactory } from '@backstage/plugin-search-backend-node';
 import { AuthService, LoggerService } from '@backstage/backend-plugin-api';
 import { TodoDocument } from '@internal/plugin-todo-common';
 import { TodoListService } from '../services/TodoListService';
@@ -117,14 +113,13 @@ Register your collator by creating a backend module for the search plugin:
 
 ```ts
 // plugins/search-backend-module-todo/src/module.ts
-import { createBackendModule } from '@backstage/backend-plugin-api';
 import {
-  indexBuilderExtensionPoint,
-  searchIndexRegistryExtensionPoint,
-} from '@backstage/plugin-search-backend-node/alpha';
+  coreServices,
+  createBackendModule,
+} from '@backstage/backend-plugin-api';
+import { searchIndexRegistryExtensionPoint } from '@backstage/plugin-search-backend-node/alpha';
 import { todoListServiceRef } from '@internal/plugin-todo-backend';
-import { TodoCollatorFactory } from './TodoCollatorFactory';
-import { coreServices } from '@backstage/backend-plugin-api';
+import { TodoCollatorFactory } from '../todo-backend/src/search/TodoCollatorFactory';
 
 export const searchModuleTodoCollator = createBackendModule({
   pluginId: 'search',

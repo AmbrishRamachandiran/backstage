@@ -9,7 +9,7 @@ description: How to integrate your plugin with the Backstage Software Catalog
 
 ### What is the Software Catalog?
 
-The [Backstage Software Catalog](../../../features/software-catalog/software-catalog-overview.md) is a centralized system that tracks ownership, metadata, and relationships for all the software in your organization. Entities in the catalog — services, libraries, websites, APIs, teams, and more — are described by YAML files stored in source control and ingested by Backstage at regular intervals.
+The [Backstage Software Catalog](../../../features/software-catalog/index.md) is a centralized system that tracks ownership, metadata, and relationships for all the software in your organization. Entities in the catalog — services, libraries, websites, APIs, teams, and more — are described by YAML files stored in source control and ingested by Backstage at regular intervals.
 
 Plugins integrate with the catalog in two broad ways:
 
@@ -27,7 +27,7 @@ The most common catalog integration points for a plugin are:
 | **Custom entity kinds** | A new first-class kind (e.g. `Todo`) with its own schema, validation, and UI representation.                                              |
 | **Catalog client**      | A service your backend uses at runtime to query existing catalog data.                                                                    |
 
-## Adding a new `backstage.io/todo` annotation
+## Adding a new `backstage.io/todo-source` annotation
 
 The simplest way to associate todos with a catalog entity is to add an annotation to the entity's YAML file. Your plugin reads this annotation at runtime to know which todos belong to which entity.
 
