@@ -13,7 +13,7 @@ core maintainers.
 
 ## 2025 Spring Roadmap
 
-The initiatives listed below are planned for release within the next half-year, starting in November 2024. The roadmap is updated every 6 months, and the next update is planned for April 2024.
+The initiatives listed below are planned for release within the next half-year. The roadmap is updated periodically; check the [Backstage GitHub discussions](https://github.com/backstage/backstage/discussions) for the latest planning updates.
 
 ### New Frontend System - Ready for Adoption
 
