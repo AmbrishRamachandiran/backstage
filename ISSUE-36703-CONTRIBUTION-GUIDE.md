@@ -10,6 +10,10 @@ A finished example is
 which moved the docs for `@backstage/plugin-scaffolder-backend-module-gitea`.
 Open its **Files changed** tab next to this guide.
 
+For a visual explanation of what moves where, and how to use GitHub Copilot
+for the first draft, download and open
+[`ISSUE-36703-VISUAL-GUIDE.html`](./ISSUE-36703-VISUAL-GUIDE.html) in a browser.
+
 ## What the task is, and why we do it
 
 [backstage.io/docs](https://backstage.io/docs) is the source of truth for
